@@ -1,0 +1,10 @@
+.Partipicant{
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.Photo{
+    max-width: 150px;
+    max-height: 180px;
+}

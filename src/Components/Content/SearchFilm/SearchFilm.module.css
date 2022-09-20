@@ -1,0 +1,29 @@
+.SearchContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+.Search{
+    max-width: 750px;
+    height: 60px;
+    font-size: 45px;
+    padding: 0 120px 0 120px;
+}
+.Film{
+    display: flex;
+    gap: 10px;
+}
+.Preview{
+    padding-left: 130px;
+    height: 400px;
+    width: 250px;
+}
+.Description{
+    height: 65px;
+    max-width: 500px;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

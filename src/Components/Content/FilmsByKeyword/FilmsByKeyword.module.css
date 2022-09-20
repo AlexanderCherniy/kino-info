@@ -1,0 +1,15 @@
+.FilmsByKeyword{
+    display: flex;
+    column-gap: 40px;
+    row-gap: 20px;
+    max-width: 600px;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+.SearchFilmInput{
+    max-width: 500px;
+}
+.SearchFilmFlexContainer{
+    display: flex;
+}

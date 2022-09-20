@@ -1,0 +1,14 @@
+.SideBar{
+    background-color: white;
+    position: sticky;
+    top: 65px;
+    border-right: 1px rgba(31,31,31,.1) solid;
+    height: 100vh;
+    padding: 20px 30px;
+    line-height: 35px;
+    box-sizing: border-box;
+}
+.LinkIcon{
+    margin-top: 2px;
+    margin-right: 5px;
+}

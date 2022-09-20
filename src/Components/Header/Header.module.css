@@ -1,0 +1,22 @@
+.Header{
+    background-color: #1f1f1f;
+    height: 65px;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+}
+.Header__Content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    align-items: center;
+    gap: 50 
+}
+.Header__Title{
+    font-size: 30px;
+    color: white;
+    white-space: nowrap;
+}
