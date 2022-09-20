@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kino-info/static/css/main.6cce8be1.css",
+    "main.js": "/kino-info/static/js/main.f7f9d40b.js",
+    "static/js/787.0a0a745c.chunk.js": "/kino-info/static/js/787.0a0a745c.chunk.js",
+    "index.html": "/kino-info/index.html",
+    "main.6cce8be1.css.map": "/kino-info/static/css/main.6cce8be1.css.map",
+    "main.f7f9d40b.js.map": "/kino-info/static/js/main.f7f9d40b.js.map",
+    "787.0a0a745c.chunk.js.map": "/kino-info/static/js/787.0a0a745c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6cce8be1.css",
+    "static/js/main.f7f9d40b.js"
+  ]
+}
