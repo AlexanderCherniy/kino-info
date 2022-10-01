@@ -4,7 +4,7 @@ import { AllActionType, AppState, TypeFunction } from "./store-redux"
 
 
 const initialState = {
-    Films: [],
+    Films: [] as any
 }
 type initialStateType = typeof initialState
 const filmSearch = (state = initialState, action: ActionType): initialStateType => {

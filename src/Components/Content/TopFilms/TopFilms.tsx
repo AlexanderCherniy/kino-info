@@ -1,26 +1,17 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FilmsApi } from "../../../DAL/Films";
-import { addPremieres, getFilmInfo } from "../../../redux/premieres-reducer";
+import { addPremieres } from "../../../redux/premieres-reducer";
 import { AppState } from "../../../redux/store-redux";
-import { addTopFilms } from "../../../redux/topFilms-reducer";
-import TopFilm from "./Film/Film";
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import cn from "./TopFilms.module.css"
+import Top250Films from "./Top250Films/Top250Films";
+import Premier from "./Premier/Premier";
 const TopFilms: React.FC = () => {
-    const [topFilmsPage, setTopFilmsPage] = useState<number>(1)
     const [popularFilmsPage, setPopularFilmsPage] = useState<number>(1)
     const [counterRandom, setCounterRandom] = useState<number>(555)
     const [expectedFilmsPage, setExpectedFilmsFilmsPage] = useState<number>(1)
-    const [selectedCategory, setSelectedCategory] = useState<string>('TOP_250_BEST_FILMS')
-    const topFilms = useSelector((state: AppState) => state.topFilms.topFilms)
     const popularFilms = useSelector((state: AppState) => state.topFilms.popularFilms)
     const expectedFilms = useSelector((state: AppState) => state.topFilms.expectedFilms)
-    const showerFilm = useSelector((state: AppState) => state.premieres.showerFilm)
-    const staff = useSelector((state: AppState) => state.premieres.staff)
     const dispatch = useDispatch()
-    const [linePosition, setLinePosition] = useState(0)
-    const [counter, setCounter] = useState(0)
     // let randomPremierNumber = 0
     // const randomPremier = (min: number, max: number) => {
     //     min = Math.ceil(min);
@@ -43,15 +34,6 @@ const TopFilms: React.FC = () => {
         // // @ts-ignore
         // dispatch(getFilmInfo())
     }, [])
-    useEffect(() => {
-        //@ts-ignore
-        dispatch(addTopFilms(topFilmsPage, 'TOP_250_BEST_FILMS', 'topFilms'))
-    }, [selectedCategory, topFilmsPage])
-    useEffect(()=>{
-        if(counter % 15 === 0 && counter !== 0){
-            setTopFilmsPage(topFilmsPage + 1)    
-        }
-    }, [counter])
     // useEffect(() => {
     //     //@ts-ignore
     //     dispatch(addTopFilms(popularFilmsPage, 'TOP_100_POPULAR_FILMS', 'popularFilms'))
@@ -62,52 +44,8 @@ const TopFilms: React.FC = () => {
     // }, [selectedCategory, expectedFilmsPage])
     return (
         <div className={cn.TopFilmsContainer}>
-            <div className={window.innerWidth <= 970 ? cn.PremierContainerLowWidth : cn.PremierContainer}>
-                <div className={window.innerWidth <= 970 ? cn.TopFilmsLowWidth : cn.TopFilms}>
-                    <div >
-                        {showerFilm.logoUrl === null ? <h2>{showerFilm.nameRu}</h2> : <img className={cn.PremierTitle} src={showerFilm.logoUrl}/>}
-                    </div>
-                    <div style={{overflow: 'hidden', WebkitLineClamp: 2,
-    display: '-webkit-box',
-    WebkitBoxOrient: 'vertical'}}>
-                        {showerFilm.shortDescription === null ? showerFilm.description : showerFilm.shortDescription}
-                    </div>
-                    <div style={{display: 'flex', flexWrap: 'wrap', columnGap: 7}}>
-                        <div style={{ opacity: .6}}>Актер:</div>
-                        <div>
-                            {staff.length !== undefined ? staff.filter((obj: any) => obj.professionText === 'Актеры').map((obj: any, index: number)=> index < 3 ? index === 2 ? obj.nameRu : obj.nameRu + ", " : "") : ""}
-                        </div>
-                    </div>
-                    <div style={{display: 'flex', flexWrap: 'wrap', columnGap: 7}}>
-                        <div style={{ opacity: .6}}>Режиссер:</div>
-                        <div>
-                            {staff.length !== undefined ? staff.filter((obj: any) => obj.professionText === 'Режиссеры').map((obj: any, index: number)=> index < 2 ? index === 1 ? obj.nameRu : obj.nameRu + ", " : "") : ""}
-                        </div>
-                    </div>
-                </div>
-                <div className={cn.PremierImgContainer}>
-                    <img className={cn.PremierImg} src={showerFilm.coverUrl === null ? showerFilm.posterUrl : showerFilm.coverUrl}/>
-                    <div className={window.innerWidth > 970 ? cn.PremierImgBackground : ""}></div>
-                </div>
-            </div>
-            <div>
-                <h2>😎Лучшие Фильмы😎</h2>
-                <div style={{display: 'grid', gridTemplateColumns: ' 10fr', alignItems: 'center', position: 'relative'}}>
-                    {linePosition !== 0 ? <div className={cn.ScrollMinus} onClick={()=>setLinePosition(linePosition + 190)}>
-                        <LeftOutlined style={{fontSize: 35}}/>
-                    </div> : <></>}
-                    <div style={{ height: 390, overflow: 'hidden'}} className={cn.TopFilms}>
-                        <div style={{left: linePosition}} className={cn.TopFilmsLine}>
-                            {topFilms?.map((film: any) => <TopFilm countries={film.countries} year={film.year} genres={film.genres} nameEn={film.nameEn} nameRu={film.nameRu} posterUrl={film.posterUrl} key={film.filmId} filmId={film.filmId} />)}
-                        </div>
-                    </div>
-                        <div className={cn.ScrollPlus} onClick={()=> {
-                                    setCounter(counter + 1)
-                                    setLinePosition(linePosition - 190)
-                            }}><RightOutlined style={{fontSize: 35}}/></div>
-                    </div>
-                </div>
-            {/* каждую категорию вынеси в компоненту, пока я не вынес тебя */}
+            <Premier />
+           <Top250Films />
             {/* 
             <div>
                 <h2>😎Популярные Фильмы😎</h2>
@@ -128,17 +66,10 @@ const TopFilms: React.FC = () => {
                     {expectedFilmsPage !== 1 ? <button onClick={ () => setExpectedFilmsFilmsPage(expectedFilmsPage - 1) }>-</button> : <></>}
                     <button onClick={() => setExpectedFilmsFilmsPage(expectedFilmsPage + 1) }>+</button>
                 </div> */}
-            </div>
+        </div>
     )
 }
 export default TopFilms
-
-
-
-
-
-
-
 
 
 {/* <div>

@@ -1,0 +1,63 @@
+.SliderContainer{
+    display: grid;
+    grid-template-columns: 10fr;
+    align-items: center;
+    position: relative
+}
+.Slider{
+    position: relative;
+    column-gap: 40px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    overflow: hidden;
+    height: 390px;
+    overflow-y: auto;
+}
+.SliderItem{
+    display: grid;
+    grid-template-rows: 1.8fr 0.3fr;
+    width: 185px;
+    max-height: 300px;
+}
+.SliderLine{
+    position: absolute;
+    top: 0;
+    display: flex;
+    gap: 5px;
+}
+.SliderPreview{
+    border-radius: 8px;
+    height: 290px;
+    width: 185px;
+}
+.ScrollMinus{
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    top: 30%;
+    left: 10px;
+    cursor: pointer;
+    z-index: 444;
+    background-color: white;
+}
+.ScrollPlus{
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    top: 30%;
+    right: 30px;
+    cursor: pointer;
+    z-index: 444;
+    background-color: white;
+    position: absolute;
+
+}

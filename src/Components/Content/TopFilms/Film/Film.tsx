@@ -13,8 +13,6 @@ type Props = {
     countries: Array<countryType>
 }
 const TopFilm:React.FC<Props> = (props)=>{
-    console.log(props);
-    
     return(
         <div style={{display: 'grid', gridTemplateRows: '1.8fr 0.3fr', width: 185, maxHeight: 300}}>
             <NavLink style={{height: 290}} to={`/film/${props.filmId}`}><img style={{borderRadius: 8, height: 290, width: 185}} alt={props.nameRu} src={props.posterUrl}/></NavLink>

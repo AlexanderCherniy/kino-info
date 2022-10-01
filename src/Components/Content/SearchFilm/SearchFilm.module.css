@@ -19,7 +19,13 @@
     height: 400px;
     width: 250px;
 }
+.Name{
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0px;
+}
 .Description{
+    margin-top: 10px;
     height: 65px;
     max-width: 500px;
     -webkit-line-clamp: 3;

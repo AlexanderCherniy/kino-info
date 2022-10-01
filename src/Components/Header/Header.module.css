@@ -11,7 +11,7 @@
 }
 .Header__Content{
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
     gap: 50 
 }
@@ -19,4 +19,5 @@
     font-size: 30px;
     color: white;
     white-space: nowrap;
+    margin-right: 15px;
 }

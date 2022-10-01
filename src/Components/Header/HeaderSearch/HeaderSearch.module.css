@@ -1,0 +1,17 @@
+.SearchInput{
+    height: 25px;
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 0 5px;
+}
+.SearchButton{
+    background-color: white;
+    max-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    height: 28px;
+    font-size: 17px;
+}

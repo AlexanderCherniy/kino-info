@@ -33,7 +33,7 @@ const DropDownMenu:React.FC = () =>{
             ?
             <Dropdown overlay={menu} trigger={['click']}>
               <Space>
-                <AppstoreOutlined style={{ color: 'white', fontSize: 30 }} />
+                <AppstoreOutlined style={{ color: 'white', fontSize: 30, marginRight: 15 }} />
               </Space>
             </Dropdown> : <></>}
         </>
