@@ -24,7 +24,7 @@ const Header: React.FC = () => {
         <div></div>
         <div className={cn.Header__Content}>
           <DropDownMenu/>
-          <span className={cn.Header__Title}>KINO-INFO</span>
+          <span className={cn.Header__Title}>KINO-INFOASDASDS</span>
           <HeaderSearch keyword={keyword} setKeyword={setKeyword}/>
         </div>
         <div></div>
