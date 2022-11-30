@@ -30,7 +30,7 @@ const Top250Films:React.FC = () => {
         <h2>😎Лучшие Фильмы😎</h2>
         <div className={SliderCn.SliderContainer}>
             {linePosition !== 0 ? <div className={SliderCn.ScrollMinus} onClick={() => setLinePosition(linePosition + 190)}>
-                <LeftOutlined style={{ fontSize: 35 }} />
+                <LeftOutlined style={{ fontSize: 35, color: '#141414' }} />
             </div> : <></>}
             <div className={SliderCn.Slider}>
                 <div style={{ left: linePosition }} className={SliderCn.SliderLine}>
@@ -40,7 +40,7 @@ const Top250Films:React.FC = () => {
             <div className={SliderCn.ScrollPlus} onClick={() => {
                 setCounter(counter + 1)
                 setLinePosition(linePosition - 190)
-            }}><RightOutlined style={{ fontSize: 35 }} /></div>
+            }}><RightOutlined style={{ fontSize: 35, color: '#141414' }} /></div>
         </div>
     </div>
     )

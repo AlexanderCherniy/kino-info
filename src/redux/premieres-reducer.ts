@@ -77,6 +77,7 @@ export const getFilmInfo = (id: number):ThunkType => async (dispatch) => {
 export const getFilmStaff = (id: number):ThunkType => async (dispatch) => {
     const response = await FilmsApi.getStaff(id)
     dispatch(actions.setStaff(response))
+    console.log(response);
     return response
 }
 export default premieresReducer

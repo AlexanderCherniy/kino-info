@@ -3,6 +3,7 @@ import middleWare from 'redux-thunk'
 import filmReducer from "./film-reducer";
 import filmSearch from "./film-search-reducer";
 import filmsByKeywordReducer from "./films-by-keyword-reducer";
+import FilmsReducer from "./films-reducer";
 import headerReducer from "./header-reducer";
 import participantsReducer from "./participants-reducer";
 import premieresReducer from "./premieres-reducer";
@@ -15,6 +16,7 @@ const reducers = combineReducers({
     participants: participantsReducer,
     film: filmReducer,
     filmSearch: filmSearch,
+    films: FilmsReducer,
 })
 type reducersType = typeof reducers
 export type AppState = ReturnType<reducersType>

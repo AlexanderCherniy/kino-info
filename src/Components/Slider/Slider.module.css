@@ -9,10 +9,9 @@
     column-gap: 40px;
     row-gap: 20px;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 1030px;
     overflow: hidden;
     height: 390px;
-    overflow-y: auto;
 }
 .SliderItem{
     display: grid;

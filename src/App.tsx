@@ -8,6 +8,7 @@ import TopFilms from "./Components/Content/TopFilms/TopFilms";
 import HeaderComponent from './Components/Header/Header'
 import SideBar from "./Components/SideBar/SideBar";
 import SearchFilm from "./Components/Content/SearchFilm/SearchFilm";
+import Films from "./Components/Content/Films/Films";
 
 
 const { Header, Footer, Content } = Layout;
@@ -21,12 +22,13 @@ const App: React.FC = () => {
           <div></div>
           <SideBar />
           <Layout>
-            <Content style={{ flex: '1 0 auto', padding: '10px 30px', backgroundColor: 'white', minHeight: '80vh' }}>
+            <Content style={{ flex: '1 0 auto', padding: '10px 0', backgroundColor: 'white', minHeight: '80vh' }}>
               <Routes>
                 <Route path='/topFilms' element={<TopFilms />} />
                 <Route path='/filmsByKeyword' element={<FilmsByKeyword />} />
                 <Route path='/global-search' element={<Search />} />
-                <Route path='/search/film' element={<SearchFilm />} />
+                <Route path='/search/films' element={<SearchFilm />} />
+                <Route path='/search/films/*' element={<Films />} />
                 <Route path='/film/*' element={<Film />} />
                 <Route path='/name/*' element={<Name />} />
                 <Route path="/" element={<Navigate to="/topFilms" />} />

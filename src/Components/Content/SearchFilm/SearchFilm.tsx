@@ -8,9 +8,10 @@ import { addFilm } from "../../../redux/film-search-reducer"
 import { NavLink } from 'react-router-dom'
 const SearchFilm: React.FC = () => {
     const SearchValueHeader = useSelector((state: AppState) => state.header.SearchValue)
-    const [keyword, setKeyword] = useState(SearchValueHeader !== '' ? SearchValueHeader : 'Казуал')
+    const [keyword, setKeyword] = useState(SearchValueHeader !== '' ? SearchValueHeader : '')
     let timeoutId = setTimeout(() => setKeyword(keyword), 1000)
     const Films = useSelector((state: AppState) => state.filmSearch.Films)
+    const FilmsCategory = useSelector((state: AppState) => state.filmSearch.FilmsCategory)
     const inputRef = React.useRef<HTMLInputElement>(null)
     const dispatch = useDispatch()
     useEffect(() => {
@@ -28,7 +29,7 @@ const SearchFilm: React.FC = () => {
                             let text = inputRef.current.value
                             clearTimeout(timeoutId);
                             timeoutId = setTimeout(() => setKeyword(text), 1000)
-                        }} autoComplete='off' name='keyword' className={cn.Search} placeholder="Введите Название Фильма" defaultValue={keyword} />
+                        }} autoComplete='off' name='keyword' className={cn.Search} placeholder="Название Фильма" defaultValue={keyword} />
                     </div>
                 </div>
                 {/* {Films.length !== 0 ? Films.map((film: any)=> <div key={film.filmId}><img src={film.posterUrlPreview}/></div>) : <></>} */}
@@ -44,6 +45,19 @@ const SearchFilm: React.FC = () => {
                             <span className={cn.Description}>{Films[0]?.description}</span>
                         </div>
                     </div> : <></>}
+            </div>
+            <div>
+                <h2>Категории</h2>
+                {FilmsCategory.map((category)=> {
+                    return <NavLink to={`/search/films/${category.searchWords}`}>
+                        <div style={{display: 'flex', gap: 30, alignItems: 'center'}}>
+                            <img style={{height: 90, width: 90}} src={category.urlImg} />
+                            <div>
+                                <h3>{category.title}</h3>
+                            </div>
+                        </div>
+                    </NavLink>
+                } )}
             </div>
         </div>
     )

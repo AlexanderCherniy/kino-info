@@ -1,5 +1,7 @@
-import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { addPremieres } from '../../../../redux/premieres-reducer'
 import { AppState } from '../../../../redux/store-redux'
 import cn from './Premier.module.css'
 
@@ -8,6 +10,13 @@ import cn from './Premier.module.css'
 const Premier: React.FC = () => {
     const showerFilm = useSelector((state: AppState) => state.premieres.showerFilm)
     const staff = useSelector((state: AppState) => state.premieres.staff)
+    const dispatch = useDispatch()
+    console.log(showerFilm);
+    console.log(staff);
+    useEffect(() => {
+        //@ts-ignore
+        dispatch(addPremieres())
+    }, [])
     return (
         <div className={window.innerWidth <= 970 ? cn.PremierContainerLowWidth : cn.PremierContainer}>
             <div className={window.innerWidth <= 970 ? cn.TopFilmsLowWidth : cn.TopFilms}>

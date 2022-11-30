@@ -7,7 +7,7 @@ const { Sider } = Layout;
 const SideBarLinks = [
     {to: '/topFilms', icon: <ShopOutlined className={cn.LinkIcon}/>, text: 'Главная', id: 1},
     {to: '/global-search', icon: <PauseCircleOutlined className={cn.LinkIcon}/>, text: 'Search', id: 2},
-    {to: '/search/film', icon: <PauseCircleOutlined className={cn.LinkIcon}/>, text: 'Фильмы', id: 3}
+    {to: '/search/films', icon: <PauseCircleOutlined className={cn.LinkIcon}/>, text: 'Фильмы', id: 3}
 ]
 
 const SideBar:React.FC = () => {

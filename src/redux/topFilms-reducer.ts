@@ -12,7 +12,7 @@ const topFilmsReducer = (state = initialState, action: ActionType): initialState
         case "topFilms-reducer/ADD_FILMS": {
             return {
                 ...state,
-                [action.wantChange]: [...state.topFilms, ...action.topFilms]
+                [action.wantChange]: action.wantChange === 'topFilms' ?  [...state.topFilms, ...action.topFilms] : action.wantChange === 'popularFilms' ? [...state.popularFilms, ...action.topFilms] : [...state.expectedFilms, ...action.topFilms]
             }
         }
         default: {
@@ -28,6 +28,9 @@ export const actions = {
 }
 export const addTopFilms = (page: number, category: string, wantChange: string):ThunkType => async (dispatch) => {
     const response = await FilmsApi.getFilms(page, category)
+    console.log(response);
+    
+    
     dispatch(actions.addTopFilms(response, wantChange))
     return response
 }

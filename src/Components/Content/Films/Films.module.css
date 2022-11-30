@@ -1,0 +1,68 @@
+.FilmsPage{
+    padding: 20px 50px;
+}
+.Film{
+    padding: 20px 0px;
+    border-top: 1px black solid;
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr 3fr 1fr 1fr;
+}
+.FilmInfo{
+    display: flex;
+    flex-direction: column;
+}
+.FilmName{
+    font-weight: 500;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+.FilmAccurateInfo{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.FilmCountry{
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(141, 141, 141);
+}
+.filmNumber{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rating{
+    background: linear-gradient(165deg,#ffd25e 16.44%,#b59646 63.42%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 4px;
+}
+.ratingVoteCount{
+    font-weight: 300;
+    margin-right: 10px;
+}
+.knowMore{
+    border-radius: 20px;
+    transition: scale 0.2s;
+    height: 30px;
+    font-weight: 600;
+    padding: 5px 15px;
+}
+.knowMore:hover{
+    scale: 1.1;
+}
+.activeNum{
+    font-weight: bold;
+    font-size: 22px;
+    margin-right: 3px;
+}
+.noactiveNum{
+    font-size: 19px;
+    margin-right: 3px;
+}
