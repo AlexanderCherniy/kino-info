@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kino-info/static/css/main.cc937d3a.css",
-    "main.js": "/kino-info/static/js/main.903316bc.js",
+    "main.css": "/kino-info/static/css/main.9eaec613.css",
+    "main.js": "/kino-info/static/js/main.05840814.js",
     "static/js/787.0a0a745c.chunk.js": "/kino-info/static/js/787.0a0a745c.chunk.js",
     "index.html": "/kino-info/index.html",
-    "main.cc937d3a.css.map": "/kino-info/static/css/main.cc937d3a.css.map",
-    "main.903316bc.js.map": "/kino-info/static/js/main.903316bc.js.map",
+    "main.9eaec613.css.map": "/kino-info/static/css/main.9eaec613.css.map",
+    "main.05840814.js.map": "/kino-info/static/js/main.05840814.js.map",
     "787.0a0a745c.chunk.js.map": "/kino-info/static/js/787.0a0a745c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc937d3a.css",
-    "static/js/main.903316bc.js"
+    "static/css/main.9eaec613.css",
+    "static/js/main.05840814.js"
   ]
 }
